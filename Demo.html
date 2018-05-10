@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>演示</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="iToast.css">
+</head>
+
+<body>
+    <input type="button" value="success" onclick="Show('success');">
+    <input type="button" value="danger" onclick="Show('danger');">
+    <input type="button" value="info" onclick="Show('info');">
+    <input type="button" value="warning" onclick="Show('warning');">
+    <br><br><br>
+    <a href="https://ainto.org">Blog</a>
+</body>
+<script src="iToast.js"></script>
+<script>
+    function randomString(len) {　　
+        len = len || 32;　　
+        var $chars = 'ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789';
+        var maxPos = $chars.length;　　
+        var pwd = '';　　
+        for (i = 0; i < len; i++) {　　　　
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));　　
+        }　　
+        return pwd;
+    }
+
+    function Show(st) {
+        switch (st) {
+            case 'success':
+            Toast.success(randomString(30));
+            break;
+            case 'danger':
+            Toast.danger(randomString(30));
+            break;
+            case 'info':
+            Toast.info(randomString(30));
+            break;
+            case 'warning':
+            Toast.warning(randomString(30));
+            break;
+        }
+    }
+
+    function test() {
+        alert("回调");
+    }
+
+    Toast.config({
+        delay: 5000, //显示时长 单位: ms
+        positionClass: 'i-toast-left i-toast-bottom', //位置class
+    });
+</script>
+</html>

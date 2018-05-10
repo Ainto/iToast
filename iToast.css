@@ -1,0 +1,221 @@
+.i-toast-container {
+    position: fixed;
+    width: 20%;
+    color: #fff;
+    min-width: 250px;
+    z-index: 9999;
+}
+
+.i-toast-container .i-toast {
+    display: block;
+    overflow: hidden;
+    -webkit-animation: i-toast-appear 300ms forwards;
+    animation: i-toast-appear 300ms forwards;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .45);
+    position: relative;
+    padding-right: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.i-toast-container .i-toast-wrapper {
+    display: table;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.i-toast-container .i-toast-icon {
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3em;
+    opacity: .85;
+}
+
+.i-toast-container .i-toast-text {
+    display: table-cell;
+    width: 80%;
+    vertical-align: middle;
+    word-break: break-all;
+}
+
+.i-toast-center {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.i-toast-left {
+    left: 20px;
+}
+
+.i-toast-right {
+    right: 20px;
+}
+
+.i-toast-top {
+    top: 0;
+}
+
+.i-toast-bottom {
+    bottom: 20px;
+}
+
+.i-toast-container .i-toast-danger {
+    background: #da1515;
+}
+
+.i-toast-container .i-toast-warning {
+    background: #e09a19;
+}
+
+.i-toast-container .i-toast-info {
+    background: #1bb5cd;
+}
+
+.i-toast-container .i-toast-success {
+    background: #0dc941;
+}
+
+.i-toast-container .i-toast.i-toast-disappear {
+    -webkit-animation: i-toast-disappear 300ms;
+    animation: i-toast-disappear 300ms;
+}
+
+@media screen and (max-width: 361px) {
+    .i-toast-container {
+        width: 90%;
+        min-width: 90%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+}
+
+@keyframes i-toast-appear {
+    0% {
+        opacity: 0;
+        bottom: -16px;
+        max-height: 0;
+        max-width: 0;
+        margin-top: 0;
+    }
+    30% {
+        opacity: .8;
+        bottom: -8px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+        max-height: 150px;
+        margin-top: 10px;
+        max-width: 500px;
+    }
+}
+
+@keyframes i-toast-disappear {
+    0% {
+        opacity: 1;
+        bottom: 0;
+        margin-top: 10px;
+    }
+    20% {
+        opacity: .35;
+        bottom: -8px;
+        margin-top: 10px;
+    }
+    to {
+        opacity: 0;
+        bottom: -16px;
+        margin-top: 10px;
+    }
+}
+
+i[class*="i-icon-circle-"] {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.i-icon-circle-success {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.i-icon-circle-success::before {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 2px;
+    box-shadow: inset 0 0 0 32px;
+    content: '';
+    width: 14px;
+    top: 15px;
+    left: 14px;
+}
+
+.i-icon-circle-success:after {
+    box-shadow: inset 0 0 0 32px;
+    position: absolute;
+    width: 2px;
+    content: '';
+    height: 8px;
+    left: 7px;
+    bottom: 10px;
+}
+
+.i-icon-circle-danger {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.i-icon-circle-danger::before {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 32px;
+    height: 2px;
+    content: '';
+    width: 18px;
+}
+
+.i-icon-circle-danger:after {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 32px;
+    width: 2px;
+    content: '';
+    height: 18px;
+}
+
+.i-icon-circle-info {
+    position: relative;
+}
+
+.i-icon-circle-info:after {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 3px;
+    height: 4px;
+    content: '';
+    box-shadow: inset 0 0 0 32px, 0 3px, 0 5.5px, 0 12px;
+    top: 5px;
+}

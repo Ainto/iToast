@@ -8,6 +8,7 @@
         successIconClass: 'i-icon-circle-success', //success 图标类
         dangerIconClass: 'i-icon-circle-danger', //danger 图标类
         warningIconClass: 'i-icon-circle-info', //warning 图标类
+        hover: false, //鼠标悬浮取消自动消失
     }
 
     //主容器
@@ -36,12 +37,26 @@
         toast.appendChild(wrapper);
 
         iToastContainer.appendChild(toast);
+
         setTimeout(function () {
-            toast.className += " i-toast-disappear";
             toast.addEventListener('animationend', function () {
                 iToastContainer.removeChild(toast);
             });
+        }, 350);
+
+        toast.addEventListener('click', function () {
+            toast.className += " i-toast-disappear";
+        });
+
+        var autoclear = setTimeout(function () {
+            toast.className += " i-toast-disappear";
         }, defconfig.delay);
+
+        if (defconfig.hover) {
+            toast.addEventListener('mouseover', function () {
+                clearTimeout(autoclear);
+            });
+        };
     }
 
     var Toast = {

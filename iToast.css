@@ -43,10 +43,14 @@
     word-break: break-all;
 }
 
-.i-toast-center {
+.i-toast-center-h {
     right: 0;
     left: 0;
     margin: 0 auto;
+}
+
+.i-toast-center-v {
+    bottom: 50%;
 }
 
 .i-toast-left {
